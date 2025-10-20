@@ -1,0 +1,35 @@
+# VSCode
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+.devcontainer/
+
+# IDF build system
+build/
+sdkconfig.old
+sdkconfig.ci
+
+# Gerados pelo menuconfig
+sdkconfig.defaults
+partition_table/*.bin
+partition_table/*.csv
+
+# Arquivos temporários
+*.log
+*.pyc
+__pycache__/
+
+# CMake/IDF cache
+CMakeCache.txt
+cmake-build-*/
+
+# Arquivos ocultos do sistema
+.DS_Store
+Thumbs.db
+.clangd
+
+# Componentes baixados automaticamente
+components/*/CMakeLists.txt.user
+managed_components/
