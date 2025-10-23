@@ -5,6 +5,11 @@ During the implementation, I worked on topics such as FreeRTOS task scheduling a
 
 This repository serves both as a portfolio example and as a personal reference of the development flow using the ESP-IDF — from project setup, to cloud integration, to deployment over-the-air.
 
+#### :pushpin: To-Do list:
+- [ ] The web page was provided by the course. I will not upload it until I create one myself.
+- [ ] Reorganize source and header files
+
+---
 
 ## Creating a Wi-Fi Application
 
