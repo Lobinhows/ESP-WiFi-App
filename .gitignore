@@ -11,6 +11,12 @@ build/
 sdkconfig.old
 sdkconfig.ci
 
+# Arquivos da Web Page (não foi eu quem fiz)
+app.css
+app.js
+favicon.ico
+index.html
+
 # Gerados pelo menuconfig
 sdkconfig.defaults
 partition_table/*.bin

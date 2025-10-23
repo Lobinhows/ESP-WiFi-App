@@ -17,6 +17,7 @@
 #include "lwip/netdb.h"
 #include "RGB.h"
 #include "tasks_common.h"
+#include "http_server.h"
 
 
  // Tag for serial console messages
@@ -174,7 +175,7 @@ static void wifi_app_task(void* pvParameters) {
             case WIFI_APP_MSG_START_HTTP_SERVER:
                 ESP_LOGI(TAG, "WIFI_APP_MSG_START_HTTP_SERVER");
 
-                //http_server_start();
+                http_server_start();
                 rgb_led_http_started();
                 break;
             case WIFI_APP_MSG_CONNECTING_FROM_HTTP_SERVER:
