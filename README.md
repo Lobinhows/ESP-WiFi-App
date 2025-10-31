@@ -5,6 +5,12 @@ During the implementation, I worked on topics such as FreeRTOS task scheduling a
 
 This repository serves both as a portfolio example and as a personal reference of the development flow using the ESP-IDF — from project setup, to cloud integration, to deployment over-the-air.
 
+#### :pushpin: To-Do list:
+- [ ] The web page was provided by the course. I will not upload it until I create one myself.
+- [ ] Reorganize source and header files
+
+---
+
 
 ## Creating a Wi-Fi Application
 
@@ -35,6 +41,6 @@ When NVS storage is enabled, ESP-IDF automatically persists Wi-Fi configuration 
 
 :heavy_exclamation_mark: To keep the documentation organized, each major step is described in a separate file inside the `docs/` folder, following the same order in which the system was built.
 
-- [Starting SoftAP](docs/WiFi_SoftAP.md)
-- [HTTP Server](docs/HTTP_Server.md)
-- [OTA Updates](docs/OTA_updates.md)
+- [Starting SoftAP](./docs/WiFi_SoftAP.md)
+- [HTTP Server](./docs/HTTP_Server.md)
+- [OTA Updates](./docs/OTA_updates.md)

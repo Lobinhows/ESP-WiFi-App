@@ -9,6 +9,10 @@
 
 #include "freertos/FreeRTOS.h"
 
+#define OTA_UPDATE_PENDING      0
+#define OTA_UPDATE_SUCCESSFUL   1
+#define OTA_UPDATE_FAILED       -1
+
  /**
   * Messages for HTTP monitor
   */
@@ -18,7 +22,6 @@ typedef enum http_server_message {
     HTTP_MSG_WIFI_CONNECT_FAIL,
     HTTP_MSG_OTA_UPDATE_SUCCESS,
     HTTP_MSG_OTA_UPDATE_FAIL,
-    HTTP_MSG_OTA_UPDATE_INITIALIZED,
 } http_server_message_e;
 
 /**
@@ -44,5 +47,10 @@ void http_server_start(void);
  * Stops HTTP Server
  */
 void http_server_stop(void);
+
+/**
+ * Calls esp_restart upon successful firmware update
+ */
+void http_server_fw_update_reset_callback(void* arg);
 
 #endif /* __HTTP_SERVER_H__ */
