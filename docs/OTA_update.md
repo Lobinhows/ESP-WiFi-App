@@ -13,7 +13,7 @@
 
 ### 1. Overview
 - Allows a device to update itself from data received (over WiFi, for example) while a normal firmware is running.
-- Requires configurating the partition table with at least 2 OTA slots (ota_0 and ota_1) and an "OTA Data Partition"(see [HTTP Server](./HTTP_Server.md))
+- Requires configurating the partition table with at least 2 OTA slots (ota_0 and ota_1) and an "OTA Data Partition"(see [HTTP Server](HTTP_Server.md))
 - The OTA operation functions writes the new firmware to whichever partition is not selected for boot.
 - OTA Data partition determines which image should be used in the next boot
 
@@ -29,7 +29,7 @@
 **Key considerations:**
 - Each OTA partition must be large enough for your firmware
 - OTA data partition (typically 0x2000 bytes) stores boot selection
-- Custom partition tables are often necessary (see [HTTP Server](./HTTP_Server.md))
+- Custom partition tables are often necessary (see [HTTP Server](HTTP_Server.md))
 
 ---
 

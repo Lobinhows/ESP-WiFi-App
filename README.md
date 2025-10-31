@@ -41,6 +41,6 @@ When NVS storage is enabled, ESP-IDF automatically persists Wi-Fi configuration 
 
 :heavy_exclamation_mark: To keep the documentation organized, each major step is described in a separate file inside the `docs/` folder, following the same order in which the system was built.
 
-- [Starting SoftAP](./docs/WiFi_SoftAP.md)
-- [HTTP Server](./docs/HTTP_Server.md)
-- [OTA Updates](./docs/OTA_updates.md)
+- [Starting SoftAP](docs/WiFi_SoftAP.md)
+- [HTTP Server](docs/HTTP_Server.md)
+- [OTA Update](docs/OTA_update.md)
