@@ -1,4 +1,4 @@
-idf_component_register(SRCS "http_server.c" "WiFi_App.c" "main.c" "RGB.c"
+idf_component_register(SRCS "DHT22.c" "http_server.c" "WiFi_App.c" "main.c" "RGB.c"
                         PRIV_REQUIRES spi_flash esp_wifi esp_http_server
                                         esp_driver_ledc nvs_flash app_update
                                         esp_timer

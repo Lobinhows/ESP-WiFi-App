@@ -19,7 +19,7 @@
 
 --- 
 
-## 2. Partition Table Requirements
+### 2. Partition Table Requirements
 
 **Minimum partition setup:**
 - Two OTA app partitions (`ota_0`, `ota_1`)
@@ -33,7 +33,7 @@
 
 ---
 
-## 3. OTA Update Process
+### 3. OTA Update Process
 
 **High-level flow with implementation details:**
 

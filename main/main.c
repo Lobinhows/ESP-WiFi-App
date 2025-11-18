@@ -18,6 +18,7 @@
 #include "RGB.h"
 #include "WiFi_App.h"
 #include "nvs_flash.h"
+#include "DHT22.h"
 
  /**
   * RGB Set Colors
@@ -37,4 +38,5 @@ void app_main(void) {
 
     // Start wifi
     wifi_app_start();
+    DHT22_task_start();
 }
