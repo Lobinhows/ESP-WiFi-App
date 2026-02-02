@@ -14,12 +14,21 @@
 #include "esp_system.h"
 #include "esp_wifi.h"
 #include "esp_http_server.h"
+#include "esp_log.h"
 
 #include "RGB.h"
 #include "WiFi_App.h"
 #include "nvs_flash.h"
 #include "DHT22.h"
+#include "wifi_reset_button.h"
+#include "sntp_time_sync.h"
 
+static const char TAG[] = "main";
+
+void wifi_application_connected_events(void) {
+    ESP_LOGI(TAG, "WiFi Application Connected!");
+    sntp_time_sync_task_start();
+}
  /**
   * RGB Set Colors
   *  WiFi Started -->  220, 240, 50
@@ -27,6 +36,7 @@
   *  WiFi connected --> 202, 88, 223
   *  !! Commom Anode LED used !!
   */
+
 void app_main(void) {
     // Initialize NVS
     esp_err_t ret = nvs_flash_init();
@@ -38,5 +48,12 @@ void app_main(void) {
 
     // Start wifi
     wifi_app_start();
+
+    // Configure WiFi reset button
+    wifi_reset_button_config();
+
     DHT22_task_start();
+
+    wifi_app_set_callback(&wifi_application_connected_events);
+
 }

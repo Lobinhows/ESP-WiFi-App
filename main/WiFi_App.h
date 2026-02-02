@@ -11,6 +11,10 @@
 #include "esp_wifi_types.h"
 #include "esp_netif.h"
 
+ // Callback typedef
+ // Type for a pointer to a function that takes no arguments and returns nothing 
+typedef void (*wifi_connected_event_callback_t)(void);
+
  // Access point settings
 #define WiFi_AP_SSID    "ESP32_AP"  // AP Name
 #define WiFi_AP_PASS    "quickpass" // AP Password
@@ -38,7 +42,10 @@ extern esp_netif_t* esp_netif_ap;
 typedef enum wifi_app_message {
     WIFI_APP_MSG_START_HTTP_SERVER = 0,
     WIFI_APP_MSG_CONNECTING_FROM_HTTP_SERVER,
-    WIFI_APP_MSG_STA_CONNECTED_GOT_IP
+    WIFI_APP_MSG_STA_CONNECTED_GOT_IP,
+    WIFI_APP_MSG_USER_REQUESTED_STA_DISCONNECT,
+    WIFI_APP_MSG_LOAD_SAVED_CREDENTIALS,
+    WIFI_APP_MSG_STA_DISCONNECTED,
 }   wifi_app_message_e;
 
 /**
@@ -60,5 +67,21 @@ BaseType_t wifi_app_send_message(wifi_app_message_e msgID);
  * Starts WiFi RTOS task
  */
 void wifi_app_start(void);
+
+/**
+ * Gets wifi configuration
+ */
+wifi_config_t* wifi_app_get_wifi_config(void);
+
+/**
+ * Sets callback function
+ */
+void wifi_app_set_callback(wifi_connected_event_callback_t cb);
+
+/**
+ * Calls the callback function
+ */
+void wifi_app_call_callback(void);
+
 
 #endif // __WIFI_APP_H__

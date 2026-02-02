@@ -36,6 +36,9 @@ cmake-build-*/
 Thumbs.db
 .clangd
 
+# Ainda não usados
+esp-aws-iot/
+
 # Componentes baixados automaticamente
 components/*/CMakeLists.txt.user
 managed_components/
