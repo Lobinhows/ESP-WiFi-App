@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="stylesheet" href="app.css">
+	<script src='jquery-3.7.1.min.js'></script>
+	<script async src="app.js"></script>
+	<title>ESP32 WiFi App</title>
+</head>
+
+<body>
+	<header>
+		<h1>ESP32 WiFi Application</h1>
+	</header>
+	<hr>
+	<div style="justify-items: center;">
+		<h2>ESP32 WiFi Connection</h2>
+		<div style="display:flex; flex-direction: row; align-items: center; justify-content: center; gap:15px">
+			<div class="section_container" id="WiFiConnect">
+				<section class="section_container">
+					<input style="margin-bottom: 8px" id="connect_ssid" type="text" maxlength="32" placeholder="SSID"
+						value="" />
+					<input style="margin-bottom: 8px" id="connect_pass" type="password" maxlength="64"
+						placeholder="Password" value="" />
+					<div>
+						<label for="pass_checkbox">Show password</label>
+						<input id="pass_checkbox" type="checkbox" onclick="showPassword()" value="Show Password" />
+					</div>
+				</section>
+				<div class="buttons" style="display:flex; flex-direction: row">
+					<input id="connect_button" type="button" value="Connect" />
+				</div>
+				<div>
+					<div id="wifi_cred_errors"></div>
+					<h4 id="wifi_connect_status"></h4>
+				</div>
+			</div>
+
+
+			<div class="section_container" id="connect_info" style="display:none">
+				<section>
+					<div id="connected_ap_label"></div>
+					<div id="connected_ap"></div>
+				</section>
+				<div id="ip_address_label">Aplabel</div>
+				<div id="wifi_connected_ip"></div>
+				<div id="netmask_label">Netmask</div>
+				<div id="wifi_connected_netmask"></div>
+				<div id="gateway_label">Gateway</div>
+				<div id="wifi_connected_gw"></div>
+				<div id="ssid_label">SSIDlabel</div>
+				<div id="ap_ssid"></div>
+				<div class="buttons">
+					<input id="disconnect_wifi" type="button" value="Disconnect" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<hr>
+
+	<div class="section_container">
+		<h2>SNTP Time Synchronization</h2>
+		<!-- <label for="local_time"> Connect to WiFi for Local Time: </label> -->
+		<div id="local_time">Connect to WiFi for Local Time!</div>
+	</div>
+	<hr>
+
+	<div class="section_container" id="sensor_data">
+		<h2>DHT22 Sensor Readings</h2>
+		<div id="temperature_reading"></div>
+		<div id="humidity_reading"></div>
+	</div>
+
+	<hr>
+	<div class="section_container" id="OTA">
+		<h2>Firmware Update</h2>
+		<label id="latest_firmware_label">Latest Firmware: </label>
+		<div id="latest_firmware"></div>
+		<!-- This input prompts the file selector when the button is clicked, but remains invisible -->
+		<input type="file" accept=".bin" id="selected_file" style="display: none;" onchange="displayFileInfo()" />
+		<div class="buttons">
+			<input id="select_button" type="button" value="Select File"
+				onclick="document.getElementById('selected_file').click();" />
+			<input type="button" value="Update Firmware" onclick="updateFirmware()" />
+			<h4 id="ota_update_status"></h4>
+		</div>
+	</div>
+	<hr>
+
+</body>
+<html>

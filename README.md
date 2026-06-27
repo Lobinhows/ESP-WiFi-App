@@ -5,10 +5,6 @@ During the implementation, I worked on topics such as FreeRTOS task scheduling a
 
 This repository serves both as a portfolio example and as a personal reference of the development flow using the ESP-IDF — from project setup, to cloud integration, to deployment over-the-air.
 
-#### :pushpin: To-Do list:
-- [ ] The web page was provided by the course. I will not upload it until I create one myself.
-- [ ] Reorganize source and header files
-
 ---
 
 
@@ -29,13 +25,15 @@ To better understand the process, it's important to know the stack of components
 ---
 
 ###  Project setup
-Before writing code, some options must be set in `menuconfig`:
+Some options must be set in `menuconfig`:
 
 - OTA partition scheme
 - Wi-Fi buffer sizes depending on mode
-- **Wi-Fi NVS Flash** enabled (recommended)
+- **Wi-Fi NVS Flash** enabled
 
 When NVS storage is enabled, ESP-IDF automatically persists Wi-Fi configuration in flash.
+
+Also uses [esp-aws-iot](https://github.com/espressif/esp-aws-iot) for the AWS implementation.
 
 ---
 
@@ -47,3 +45,4 @@ When NVS storage is enabled, ESP-IDF automatically persists Wi-Fi configuration 
 - [DHT22 Sensor](docs/DHT_Sensor.md)
 - [WiFi Connection](docs/WiFi_Connection.md)
 - [NVS](docs/NVS.md)
+- [AWS](docs/AWS.md)

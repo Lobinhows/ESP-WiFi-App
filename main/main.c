@@ -25,9 +25,12 @@
 
 static const char TAG[] = "main";
 
+int aws_iot_demo_main(int argc, char** argv);
+
 void wifi_application_connected_events(void) {
     ESP_LOGI(TAG, "WiFi Application Connected!");
     sntp_time_sync_task_start();
+    // aws_iot_demo_main(0, NULL);
 }
  /**
   * RGB Set Colors

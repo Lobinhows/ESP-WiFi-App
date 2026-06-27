@@ -19,10 +19,22 @@
 - Assigns each key-value pair to a **Namespace**
 
 ---
+
 ### 2. Implementation
 
-- Saves SSID and Password at flash memory after successfuly connected to an access point.
-    - Good for storing small values
-- On startup, checks flash for any credentials and attempts a connection, if one is found.
-- Clear flash memory if MAX Connections is reached, or if disconnect button is pressed.
+NVS operations follow a consistent pattern: open namespace, execute your operation (read, write, or erase), commit if needed, then close.
 
+**Saving Wi-Fi credentials (SSID & Password):**
+- Open namespace with `nvs_open("wifi_config", NVS_READWRITE, &handle)`
+- Save credentials using `nvs_set_blob()` (or `nvs_set_str()`)
+- Commit with `nvs_commit()` and close with `nvs_close()`
+- *When:* After successfully connecting to an access point
+
+**Loading stored credentials:**
+- Open namespace as `NVS_READONLY`
+- Read with `nvs_get_blob()` (call twice: first for size, then for data)
+- *When:* On ESP32 startup, before Wi-Fi initialization
+
+**Clearing credentials:**
+- Use `nvs_erase_key()` for specific keys or `nvs_erase_all()` for entire namespace
+- *When:* Max connection retries reached or user disconnects manually

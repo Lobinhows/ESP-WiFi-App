@@ -1,0 +1,125 @@
+body {
+    background-color: #e8f1f1;
+    font-family: HelveticaNeueRegular, HelveticaNeue-Regular, "Helvetica Neue Regular", HelveticaNeue, "Helvetica Neue", Helvetica, Arial;
+    color: #0272B7;
+}
+
+.section_container {
+    display: flex;
+    flex-direction: column;
+    justify-items: left;
+    align-items: center;
+}
+
+h1 {
+    display: block;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    font-size: 1.7em;
+    color: #1d3557;
+}
+
+h2 {
+    font-size: 1.4em;
+    color: #1d3557;
+}
+
+h3 {
+    font-size: 1.2em;
+    color: #1d3557;
+}
+
+h4 {
+    font-size: 1em;
+    color: #1d3557;
+}
+
+.gr {
+    color: green;
+}
+
+.rd {
+    color: red;
+}
+
+/* #latest_firmware, #latest_firmware_label {
+	display:inline;
+} */
+#latest_firmware {
+    color: #1d3557;
+}
+
+#file_info {
+    width: 40%;
+}
+
+
+
+.buttons {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+}
+
+input[type="button"] {
+    font-size: 15px;
+    border: 0;
+    line-height: 1.5;
+    margin: 2px;
+    text-align: center;
+    overflow: visible;
+    text-overflow: ellipsis;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(106, 125, 144, 0.35);
+    background-image: linear-gradient(to top left,
+            rgba(0, 0, 0, .2),
+            rgba(0, 0, 0, .2) 30%,
+            rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+        inset -2px -2px 3px rgba(0, 0, 0, .6);
+    min-width: 130px;
+    max-width: 15vw;
+    min-height: 50px;
+    max-height: 6vh;
+}
+
+/* On hover color */
+input[type="button"]:hover {
+    background-color: rgba(112, 164, 222, 0.68);
+}
+
+/* On click shadow colors */
+input[type="button"]:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+        inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+
+
+@media only screen and (min-width: 940px) {
+    input[type="button"] {
+        font-size: 15px;
+        border: 0;
+        line-height: 2;
+        /* padding: 0 5px; */
+        text-align: center;
+        color: #ffffff;
+        text-shadow: 1px 1px 1px #000;
+        border-radius: 10px;
+        background-color: rgba(106, 125, 144, 0.35);
+        background-image: linear-gradient(to top left,
+                rgba(0, 0, 0, .2),
+                rgba(0, 0, 0, .2) 30%,
+                rgba(0, 0, 0, 0));
+        box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+            inset -2px -2px 3px rgba(0, 0, 0, .6);
+        width: 150px;
+        min-height: 50px;
+        max-height: 6vh;
+    }
+}

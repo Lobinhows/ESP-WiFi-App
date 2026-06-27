@@ -1,21 +1,11 @@
 # VSCode
 .vscode/
-!.vscode/extensions.json
-!.vscode/settings.json
-!.vscode/launch.json
-!.vscode/tasks.json
 .devcontainer/
 
 # IDF build system
 build/
 sdkconfig.old
 sdkconfig.ci
-
-# Arquivos da Web Page (não foi eu quem fiz)
-app.css
-app.js
-favicon.ico
-index.html
 
 # Gerados pelo menuconfig
 sdkconfig.defaults
@@ -36,8 +26,9 @@ cmake-build-*/
 Thumbs.db
 .clangd
 
-# Ainda não usados
+# AWS related
 esp-aws-iot/
+main/certs
 
 # Componentes baixados automaticamente
 components/*/CMakeLists.txt.user

@@ -49,6 +49,9 @@ esp_netif_t* esp_netif_ap = NULL;
 // wifi application callback
 static wifi_connected_event_callback_t wifi_connected_event_cb;
 
+
+
+
 /**
  * WiFi application event handler
  * @param arg data, aside from event data, that is passed to the handler when it is called
@@ -348,6 +351,15 @@ void wifi_app_set_callback(wifi_connected_event_callback_t cb) {
 void wifi_app_call_callback(void) {
     wifi_connected_event_cb();
 }
+
+int8_t wifi_app_get_rssi(void) {
+    wifi_ap_record_t wifi_data;
+
+    ESP_ERROR_CHECK(esp_wifi_sta_get_ap_info(&wifi_data));
+
+    return wifi_data.rssi;
+}
+
 
 void wifi_app_start(void) {
     ESP_LOGI(TAG, "Starting WiFi application");
